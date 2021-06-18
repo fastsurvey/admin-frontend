@@ -10,8 +10,6 @@ export default function VisualRegister(props: {
     setUsername(newUsername: string): void;
     password: string;
     setPassword(newPassword: string): void;
-    passwordConfirmation: string;
-    setPasswordConfirmation(newPasswordConfirmation: string): void;
 
     entryIsValid: boolean;
     validationMessage: string;
@@ -60,21 +58,10 @@ export default function VisualRegister(props: {
                         }}
                     />
                 </div>
-                <div className='w-full centering-col gap-y-0.5'>
-                    <Label text='Repeat Password' />
-                    <TextInput
-                        type='password'
-                        value={props.passwordConfirmation}
-                        setValue={(newValue) => {
-                            props.closeAllMessages();
-                            props.setPasswordConfirmation(newValue);
-                        }}
-                    />
-                </div>
 
                 <div className='w-full gap-y-0.5 flex flex-row-reverse items-center justify-center'>
                     <Button
-                        text='Login'
+                        text='Register'
                         variant='flat-light-blue'
                         onClick={props.handleRegistration}
                         disabled={props.disabled}
